@@ -1,0 +1,59 @@
+{
+  "name": "multiclipboard-vscode",
+  "displayName": "MultiClipboard",
+  "icon": "icon.png",
+  "description": "Manage your clipboard history and quickly paste any previously copied item.",
+  "version": "1.0.0",
+  "publisher": "codeimm",
+  "license": "MIT",
+  "keywords": [
+    "clipboard",
+    "history",
+    "paste",
+    "multi"
+  ],
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "homepage": "https://github.com/codeimm/multiclipboard-vscode",
+  "bugs": {
+    "url": "https://github.com/codeimm/multiclipboard-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeimm/multiclipboard-vscode.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "multiclipboard.showHistory",
+        "title": "MultiClipboard: Show Clipboard History"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "multiclipboard.showHistory",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^16.0.0",
+    "typescript": "^4.9.0"
+  }
+}
